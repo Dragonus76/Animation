@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="">
+	<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	
+	<title>Animation</title>
+</head>
+<body>
+	<style>
+
+	body{
+
+		background-color: #ad5858;
+	}
+
+
+
+		
+		button,table,img{
+			margin-left: 10px;
+			border-radius: 10px;
+		}
+	</style>
+<br>
+
+	<button id="affiche">Faire apparaitre les lignes paires </button>
+	<button id="cache">Faire disparaitre les lignes paires </button><br/>
+	<br>
+
+	<table border>
+
+		 <tr><td>😀</td><td>😁 </td><td>😂</td></tr>
+  <tr><td>🤣 </td><td>😃</td><td>😅</td></tr>
+  <tr><td>😎</td><td>😘 </td><td>🤩</td></tr>
+  <tr><td>🤔</td><td>🤨</td><td>😥</td></tr>
+  <tr><td>😡</td><td>😈 </td><td>🤭</td></tr>
+
+</table>
+<script src="https://code.jquery.com/jquery-1.12.3.js"   integrity="sha256-1XMpEtA4eKXNNpXcJ1pmMPs8JV+nwLdEqwiJeCQEkyc="   crossorigin="anonymous"></script>
+
+<script>
+	
+	$(function(){
+
+		$('tr:even').css('background','pink');
+		$('td').css('width','200px');
+		$('td').css('text-align','center');
+		$('#affiche').click(function(){
+
+		
+				$('tr:even').show('slow');
+			});
+
+			$('#cache').click(function(){
+
+				$('tr:even').hide(1000);
+
+		});
+
+	});
+
+
+
+
+
+		
+</script><br>
+
+
+
+<img src="sexy.gif">
+<img src="sexy1.gif">
+<img src="sexy2.gif">
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script>
+
+
+
+    	
+	  $(function() {
+		$('#affiche').click(function() {
+		  $('img').first().show('slow', function showNextOne() {
+			$(this).next('img').show('slow', showNextOne);
+		  });    
+		});
+		$('#cache').click(function() {
+		  $('img').first().hide('slow', function hideNextOne() {
+			$(this).next('img').hide('slow', hideNextOne);
+		  });    
+		});
+	  });
+	  $(function(){
+
+
+		$('img').css('width','200px');
+		$( "img" ).height( "150px" );
+
+
+	});
+
+
+	  //Fonction pour  definir l'élément audio et le jouer lors du clic du troisième bouton li
+$(document).ready(function () {
+    var obj = document.createElement("audio");
+    obj.src = "Daft Punk - Get Lucky (Official Audio) ft. Pharrell Williams, Nile Rodgers.mp3";
+    obj.volume = 1;
+    obj.autoPlay = false;
+    obj.preLoad = true;
+
+    $("#affiche").click(function () {
+        obj.play();
+    });
+})
+
+	</script>
+  </body>
+</html>
+
+	
+
+
+
+</body>
+</html>
