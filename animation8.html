@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>animation</title>
+
+	<meta charset="utf-8">
+</head>
+<body>
+
+	<style type="text/css">
+		
+ #balle{
+
+
+ 	width: 10px;
+ 	height: 10px;
+ 	background-color: red;
+ 	border: black 2px solid;
+ 	border-radius: 10px;
+ 	position: relative;
+ }
+
+	</style>
+
+
+	<div id="balle"></div>
+
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+		<script>
+			
+			$(function () {
+				function bis(){
+					$('#balle').animate({left:'+=200'},'slow')
+					.animate({top:'+=200'},'slow')
+					.animate({left:'-=200'},'slow')
+					.animate({top:'-=2OO'},'slow');
+				};
+				setInterval(bis,2400);
+				// body...
+			});
+		</script>
+</body>
+</html>

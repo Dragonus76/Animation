@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ANimation</title>
+</head>
+<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" href="">
+
+<body>
+	<style type="text/css">
+		
+body{
+
+	background-color: red;
+}
+
+	</style>
+	<button id="ajouter">Ajouter animation</button>
+	<button id="annuler">Annuler la file d'attente</button>
+	<button id="remplacer">Remplacer la file d'attente</button>
+	<br><br>
+
+	<button id="retour">Ajouter une fonction de retour</button>
+
+	<img src="images/ass3.gif" id="ass3" style="position: relative;">
+	<img src="images/ass4.gif" id="ass4" style="position: relative;">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script>
+
+		$(function () {
+			$('#ajouter').click(function(){
+				$('#ass3').toggle(5000)
+				.queue(function(){
+
+					$('#ass4').animate({left:'+=200'},'slow')
+
+					.animate({top:'+=200'},'slow')
+					.animate({left:'-=200'},'slow')
+					.animate({top:'-=200'},'slow');
+
+				});
+			});
+
+		$('#annuler').click(function(){
+
+			$('img').clearQueue();
+
+
+		});
+		$('#remplacer').click(function(){
+			$('ass4').css('left',200).css('top',200);
+			$('ass4').queue(function(){
+
+				$(this).animate({top:'-=200'},'slow')
+				.animate({top:'+=200','left':'-=200'},'slow')
+				.animate({top:'-=200'},'slow');
+
+				$(this).dequeue();
+
+			});
+		});
+
+		$('#retour').click(function(){
+			$('img').queue(function(){
+
+				alert('Animation terminée.');
+				$(this).dequeue();
+
+			});
+		});
+
+
+			// body...
+		});
+
+		$(function(){
+
+
+		$('img').css('width','200px');
+		$( "img" ).height( "150px" );
+
+
+
+	});
+
+		
+
+
+	</script>
+
+
+</body>
+</html>
